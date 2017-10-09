@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       # if login doesn't work, go back to login form
-      redirect_to '/login'
+      @message = "Either your email or password was incorrect."
+      render 'new'
     end
   end
 
