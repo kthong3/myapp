@@ -18,10 +18,8 @@
 
       <ul>
         <li class="category">Social</li>
-        <li>instgram</li>
-        <li>twitter</li>
-        <li>github</li>
-        <li>email</li>
+        <li><a href="https://twitter.com/ishdbcpplsay?lang=en">twitter</a></li>
+        <li><a href="https://github.com/kthong3">github</a></li>
       </ul>
       <p class="sign_in">Admin Login</p>
     </div>
@@ -37,8 +35,12 @@
         <% end %>
 
         <div class="buttons">
-          <button class="button"><%= link_to "New Post", new_post_path %></button>
-          <button class="button">Log Out</button>
+          <% if current_user %>
+            Signed in as <%= current_user.name %> <button class="button"><%= link_to "Logout", '/logout' %></button> <button class="button"><%= link_to "New Post", new_post_path %></button>
+          <% else %>
+            <button class="button"><%= link_to 'Login', '/login' %></button> <button class="button"><%= link_to 'Signup', '/signup' %></button> <button class="button"><%= link_to "New Post", new_post_path %></button>
+          <% end %>
+
         </div>
 
         <% flash.each do |name, msg| %>
