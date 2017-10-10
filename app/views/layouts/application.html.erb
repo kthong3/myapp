@@ -36,7 +36,7 @@
 
         <div class="buttons">
           <% if current_user %>
-            Signed in as <%= current_user.name %> <button class="button"><%= link_to "Logout", '/logout' %></button> <button class="button"><%= link_to "New Post", new_post_path %></button>
+            Signed in as <%= current_user.full_name %> <button class="button"><%= link_to "Logout", '/logout' %></button> <button class="button"><%= link_to "New Post", new_post_path %></button>
           <% else %>
             <button class="button"><%= link_to 'Login', '/login' %></button> <button class="button"><%= link_to 'Signup', '/signup' %></button> <button class="button"><%= link_to "New Post", new_post_path %></button>
           <% end %>
