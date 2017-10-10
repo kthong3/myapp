@@ -13,6 +13,9 @@
     <%= @post.body %>
   </p>
 
+  <p><%= @post.tag_names %>
+  </p>
+
   <div id="comments">
     <h2><%= @post.comments.count %> Comments</h2>
     <%= render @post.comments %>
