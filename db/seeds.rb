@@ -9,13 +9,13 @@
 users = User.create([
   { name: "bob",
     email: "bob@email.com",
-    password_digest: "password" },
+    password: "password" },
   { name: "sam",
     email: "sam@email.com",
-    password_digest: "password" },
+    password: "password" },
   { name: "duck",
      email: "duck@email.com",
-     password_digest: "password" }
+     password: "password" }
   ])
 
 posts = Post.create([
