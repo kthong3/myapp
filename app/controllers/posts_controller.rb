@@ -9,7 +9,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.author = current_user
 
     if @post.save
       redirect_to @post
@@ -29,7 +28,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :body, :author_id))
+    if @post.update(params[:post].permit(:title, :body))
       redirect_to @post
     else
       render 'edit'
@@ -46,6 +45,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :body, :author_id)
+      params.require(:post).permit(:title, :body)
     end
 end
